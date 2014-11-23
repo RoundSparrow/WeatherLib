@@ -1,1 +1,3 @@
-include ':lib', ':volleyclient', ':demo15', ':OkHttpClient', 'demo'
+include ':lib', ':volleyclient',  ':OkHttpClient'
+//, 'demo15'
+//, ':demo'
