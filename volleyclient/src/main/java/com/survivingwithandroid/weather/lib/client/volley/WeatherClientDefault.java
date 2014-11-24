@@ -408,7 +408,9 @@ public class WeatherClientDefault extends WeatherClient {
                     public void onResponse(String data) {
                         // We handle the response
                         try {
+                            mostRecentCurrentConditionRawResponse = data;
                             CurrentWeather weather = provider.getCurrentCondition(data);
+                            mostRecentCurrentWeather = weather;
                             listener.onWeatherRetrieved(weather);
                         } catch (WeatherLibException t) {
                             listener.onWeatherError(t);
@@ -424,6 +426,16 @@ public class WeatherClientDefault extends WeatherClient {
         );
 
         queue.add(req);
+    }
+
+
+    private CurrentWeather mostRecentCurrentWeather = null;
+    private String mostRecentCurrentConditionRawResponse = null;
+
+    @Override
+    public String getMostRecentCurrentConditionRawResponse()
+    {
+        return mostRecentCurrentConditionRawResponse;
     }
 
     /**

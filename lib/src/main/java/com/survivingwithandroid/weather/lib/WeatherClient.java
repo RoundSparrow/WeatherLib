@@ -563,6 +563,12 @@ public abstract class WeatherClient {
         }
     };
 
+
+    public String getMostRecentCurrentConditionRawResponse()
+    {
+        return null;
+    }
+
     protected abstract void searchCityByLocation(Location location, final CityEventListener listener) throws ApiKeyRequiredException;
 
     // New abstract methods
