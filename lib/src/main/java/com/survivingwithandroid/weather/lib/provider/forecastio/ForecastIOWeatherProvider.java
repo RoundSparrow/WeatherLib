@@ -38,6 +38,8 @@ import java.util.List;
  * so you have to pass it directly into the cityId.
  * You can use {@link android.location.Geocoder} to get the geographic coordinates from the city name.
  *
+ * ToDo: don't the icon codes need to be normalized? they are not being set to numeric codes?
+ *
  * @author Francesco Azzola
  * @author Stpehen A. Gutknecht
  * */
