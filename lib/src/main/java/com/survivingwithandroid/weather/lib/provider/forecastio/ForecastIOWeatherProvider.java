@@ -166,7 +166,7 @@ public class ForecastIOWeatherProvider implements IWeatherProvider {
 
     // ToDo: make this an App-wide (other providers) convention
     public static final double TEMPERATURE_LOW_OUTRANGE_DOUBLE = -273.15D;  // Absolute Zero, Kelvin 0 - in Celsius
-    public static final double TEMPERATURE_HIGH_OUTRANGE_DOUBLE = 660.3D;  // Boiling water should be hot enough, although altitude... and space stations... so using melting point of Aluminum
+    public static final double TEMPERATURE_HIGH_OUTRANGE_DOUBLE = 660.3D;   // Boiling water should be hot enough, although altitude... and space stations... so using melting point of Aluminum in Celsius
 
     private void parseData(String data)  throws WeatherLibException {
         lastUpdate = System.currentTimeMillis();
@@ -219,11 +219,13 @@ public class ForecastIOWeatherProvider implements IWeatherProvider {
 
             JSONArray jsonDailyDataArray = daily.getJSONArray("data");
             for (int i=0; i < jsonDailyDataArray.length(); i++) {
-                // PUll from the DAILY object
+                // Pull from the DAILY object
                 JSONObject jsonDay = jsonDailyDataArray.getJSONObject(i);
                 android.util.Log.d("WeatherA", "day " + i + "? " + jsonDay.toString());
 
                 // Pull the sunrise/sunset for today, day 0, out of the first day forecast
+                // Pull the min and maximum forecast for today, day 0
+                // ToDo: could we pull moon phase, etc? Should we just never touch the "current" json root at all?
                 if (i == 0) {
                     loc.setSunrise(jsonDay.optLong("sunriseTime"));
                     loc.setSunset(jsonDay.optLong("sunriseTime"));
