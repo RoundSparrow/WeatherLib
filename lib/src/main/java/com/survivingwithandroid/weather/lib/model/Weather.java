@@ -198,11 +198,11 @@ public class Weather {
         }
 
         /*
-        * Min temperature todat
-        * @return int
+        * Min temperature today
+        * @return float
         * */
-        public int getMinTemp() {
-            return (int) minTemp;
+        public float getMinTemp() {
+            return minTemp;
         }
 
         public void setMinTemp(float minTemp) {
@@ -213,8 +213,8 @@ public class Weather {
         * Max temperature today
         * @return int
         * */
-        public int getMaxTemp() {
-            return (int) maxTemp;
+        public float getMaxTemp() {
+            return maxTemp;
         }
 
         public void setMaxTemp(float maxTemp) {
