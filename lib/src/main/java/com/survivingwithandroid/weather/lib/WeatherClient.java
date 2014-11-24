@@ -65,7 +65,7 @@ public abstract class WeatherClient {
 
 
     private static WeatherClient me;
-    protected IWeatherProvider provider;
+    public IWeatherProvider provider;
     protected Context ctx;
     protected CityEventListener cityListener;
 

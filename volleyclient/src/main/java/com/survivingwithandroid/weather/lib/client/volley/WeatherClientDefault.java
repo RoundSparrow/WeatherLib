@@ -384,7 +384,7 @@ public class WeatherClientDefault extends WeatherClient {
 
 
     /**
-     * Get the current weather condition. It returns a class structure that is indipendent from the
+     * Get the current weather condition. It returns a class structure that is independent from the
      * provider used to ge the weather data.
      * This method is an async method, in other word you have to implement your listener {@link com.survivingwithandroid.weather.lib.WeatherClient.WeatherEventListener} to
      * get notified when the weather data is ready.
