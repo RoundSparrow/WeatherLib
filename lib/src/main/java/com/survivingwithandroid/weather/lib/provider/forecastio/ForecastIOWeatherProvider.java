@@ -41,7 +41,7 @@ import java.util.List;
  * ToDo: don't the icon codes need to be normalized? they are not being set to numeric codes?
  *
  * @author Francesco Azzola
- * @author Stpehen A. Gutknecht
+ * @author Stephen A. Gutknecht
  * */
 public class ForecastIOWeatherProvider implements IWeatherProvider {
 
